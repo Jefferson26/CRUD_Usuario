@@ -23,6 +23,6 @@ export class HttpClientService {
      }
   
   getUsuariosCadastrados(){
-    return this.httpClient.get<Usuario[]>('http://localhost:8080/teste');
+    return this.httpClient.get<Usuario[]>('http://localhost:8080');
   }
 }
