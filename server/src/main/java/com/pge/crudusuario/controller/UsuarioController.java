@@ -28,6 +28,7 @@ public class UsuarioController {
 		usuario.setCpf("058.333.444-55");
 		usuarios.add(usuario);
 		
+		usuario = new Usuario();
 		usuario.setNome("Barbosa");
 		usuario.setCpf("038.123.456-70");
 		usuarios.add(usuario);
