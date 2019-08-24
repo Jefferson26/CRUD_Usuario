@@ -6,11 +6,11 @@
     </mat-form-field>
   
     <mat-form-field class="input-cadastro">
-      <input matInput placeholder="CPF">
+      <input matInput type="text" placeholder="CPF" mask='000.000.000-00'>
     </mat-form-field>
 
     <mat-form-field class="input-cadastro">
-      <input matInput [matDatepicker]="picker" placeholder="Data de Nascimento">
+      <input matInput [matDatepicker]="picker" mask='00/00/0000' placeholder="Data de Nascimento">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -24,5 +24,6 @@
       </select>
     </mat-form-field>
   </form>
+  <mat-divider class="form-divider" style="width: 90%"></mat-divider>
 </mat-card>
 
