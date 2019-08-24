@@ -1,0 +1,28 @@
+<mat-card class="cadastro-card">
+  
+  <form class="cadastro-form">
+    <mat-form-field class="input-cadastro-nome">
+      <input matInput placeholder="Nome">
+    </mat-form-field>
+  
+    <mat-form-field class="input-cadastro">
+      <input matInput placeholder="CPF">
+    </mat-form-field>
+
+    <mat-form-field class="input-cadastro">
+      <input matInput [matDatepicker]="picker" placeholder="Data de Nascimento">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="input-cadastro">
+      <mat-label>Gênero</mat-label>
+      <select matNativeControl>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="Indefinido">Indefinido</option>
+      </select>
+    </mat-form-field>
+  </form>
+</mat-card>
+

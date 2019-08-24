@@ -1,0 +1,20 @@
+.cadastro-card{
+    margin: 5%;      
+}
+
+.cadastro-form {
+    min-width: 150px;
+    width: 100%;
+}
+  
+.input-cadastro {
+    width: 15%;
+    margin: 0 3% 0% 3%;
+}
+
+.input-cadastro-nome {
+    width: 25%;
+    margin: 0 3% 0% 0%;
+}
+
+ 
