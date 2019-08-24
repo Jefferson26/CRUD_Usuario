@@ -6,10 +6,11 @@ import com.pge.crudusuario.util.GeneroUsuario;
 
 public class Usuario {
 	private Long id;
-	private String name;
+	private String nome;
 	private String cpf;
 	private LocalDate dt_nascimento;
 	private GeneroUsuario genero;
+	private Funcao funcao;
 	
 	public Long getId() {
 		return id;
@@ -17,11 +18,11 @@ public class Usuario {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getnome() {
+		return nome;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setnome(String nome) {
+		this.nome = nome;
 	}
 	public String getCpf() {
 		return cpf;
@@ -41,5 +42,10 @@ public class Usuario {
 	public void setGenero(GeneroUsuario genero) {
 		this.genero = genero;
 	}
-	
+	public Funcao getFuncao() {
+		return funcao;
+	}
+	public void setFuncao(Funcao funcao) {
+		this.funcao = funcao;
+	}
 }
