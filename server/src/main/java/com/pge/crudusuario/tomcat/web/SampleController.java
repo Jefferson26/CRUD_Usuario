@@ -21,7 +21,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pge.crudusuario.tomcat.service.HelloWorldService;
+import com.pge.crudusuario.service.HelloWorldService;
 
 @Controller
 public class SampleController {

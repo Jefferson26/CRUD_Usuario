@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pge.crudusuario.tomcat;
+package com.pge.crudusuario;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -22,20 +22,24 @@ import javax.servlet.ServletContextListener;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+
+
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-public class SampleTomcatApplication {
+@SpringBootApplication
+public class Application {
 
-	private static Log logger = LogFactory.getLog(SampleTomcatApplication.class);
+	private static Log logger = LogFactory.getLog(Application.class);
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SampleTomcatApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean
