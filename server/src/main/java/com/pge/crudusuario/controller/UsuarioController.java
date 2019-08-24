@@ -1,4 +1,4 @@
-package com.pge.crudusuariocontroller;
+package com.pge.crudusuario.controller;
 
 
 import java.util.ArrayList;
@@ -14,10 +14,24 @@ import com.pge.crudusuario.model.Usuario;
 @RestController
 public class UsuarioController {
 
-	private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+	private List<Usuario> usuarios = adicionaUsuariosFake();
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public List<Usuario> getUsuariosCadastrados() {
+		return usuarios;
+	}
+	
+	private static List<Usuario> adicionaUsuariosFake() {
+		List<Usuario> usuarios = new ArrayList<>();
+		Usuario usuario = new Usuario();
+		usuario.setNome("Jefferson");
+		usuario.setCpf("058.333.444-55");
+		usuarios.add(usuario);
+		
+		usuario.setNome("Barbosa");
+		usuario.setCpf("038.123.456-70");
+		usuarios.add(usuario);
+		
 		return usuarios;
 	}
 }

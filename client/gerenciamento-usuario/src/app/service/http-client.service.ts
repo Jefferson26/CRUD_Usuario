@@ -21,9 +21,8 @@ export class HttpClientService {
     private httpClient:HttpClient
   ) { 
      }
-     getUsuariosCadastrados()
-  {
-    console.log("test call");
-    return this.httpClient.get<Usuario[]>('http://localhost:8080');
+  
+  getUsuariosCadastrados(){
+    return this.httpClient.get<Usuario[]>('http://localhost:8080/teste');
   }
 }
