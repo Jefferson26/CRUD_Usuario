@@ -18,6 +18,7 @@ import com.pge.crudusuario.model.Usuario;
 public class UsuarioController {
 
 	private List<Usuario> usuarios = new ArrayList<>();
+	private Integer id_cadastro = 0;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public List<Usuario> getUsuariosCadastrados() {
@@ -36,7 +37,7 @@ public class UsuarioController {
 
 	@PostMapping
 	public Usuario create(@RequestBody Usuario usuario) {
-		usuario.setId(usuarios.size());
+		usuario.setId(id_cadastro++);
 		usuarios.add(usuario);
 		return usuario;
 	}

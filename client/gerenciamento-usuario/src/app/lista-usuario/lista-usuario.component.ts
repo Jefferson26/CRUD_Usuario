@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { HttpClientService, Usuario } from '../service/http-client.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
@@ -17,7 +17,7 @@ export interface DialogData {
 
 export class ListaUsuarioComponent implements OnInit {
 
-  usuarios:Usuario[];
+  @Input() usuarios:Usuario[];
   colunas_table: string[] = ['nome', 'cpf', 'nascimento', 'genero', 'funcao', 'acoes'];
   constructor(
     private httpClientService:HttpClientService,

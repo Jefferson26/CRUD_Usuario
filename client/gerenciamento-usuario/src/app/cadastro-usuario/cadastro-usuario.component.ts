@@ -1,27 +1,23 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClientService, Usuario, Funcao } from '../service/http-client.service';
 import {FormControl} from '@angular/forms';
-import { ListaUsuarioComponent } from '../lista-usuario/lista-usuario.component'
+import { ListaUsuarioComponent } from '../lista-usuario/lista-usuario.component';
+
 @Component({
   selector: 'app-cadastro-usuario',
   templateUrl: './cadastro-usuario.component.html',
   styleUrls: ['./cadastro-usuario.component.css']
 })
+
 export class CadastroUsuarioComponent implements OnInit {
 
   @ViewChild(ListaUsuarioComponent) lista_usuario;
-
   papeis = new FormControl();
-
   funcoes: Funcao[] = [
     {id: 1, nome_funcao: 'Usuário Comum', papeis:null},
     {id: 2, nome_funcao: 'Administrador', papeis:null}
   ];
-
   usuario: Usuario = new Usuario( null,"","",null,null, this.funcoes[0]);
-  
-  
-
   papeis_list = [
      {id:1, papel:[
       {id: 1, nome_papel: 'Papel 1'},
@@ -49,7 +45,8 @@ export class CadastroUsuarioComponent implements OnInit {
   createUsuario(): void {
     this.httpClientService.createUsuario(this.usuario)
         .subscribe( data => {
-          alert("Usuario cadastrado");   
+          alert("Usuario cadastrado"); 
+          window.location.reload();  
         });
   };
 
