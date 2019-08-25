@@ -1,50 +1,50 @@
 <mat-card class="cadastro-card">
-  
   <form class="cadastro-usuario-form">
     <mat-form-field class="input-cadastro-nome">
-      <input matInput placeholder="Nome">
+      <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="nome">
     </mat-form-field>
   
     <mat-form-field class="input-cadastro">
-      <input matInput type="text" placeholder="CPF" mask='000.000.000-00'>
+      <input matInput type="text" placeholder="CPF" mask='000.000.000-00' [(ngModel)]="usuario.cpf" name="cpf">
     </mat-form-field>
 
     <mat-form-field class="input-cadastro">
-      <input matInput [matDatepicker]="picker" mask='00/00/0000' placeholder="Data de Nascimento">
+      <input matInput [matDatepicker]="picker" mask='00/00/0000' placeholder="Data de Nascimento" >
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field class="input-cadastro">
       <mat-label>Gênero</mat-label>
-      <select matNativeControl>
-        <option value="masculino">Masculino</option>
-        <option value="feminino">Feminino</option>
-        <option value="Indefinido">Indefinido</option>
+      <select matNativeControl [(ngModel)]="usuario.genero" name="genero">
+        <option [ngValue]="0">Masculino</option>
+        <option [ngValue]="1">Feminino</option>
+        <option [ngValue]="2">Indefinido</option>
       </select>
     </mat-form-field>
-  </form>
-  <mat-divider class="form-divider" style="width: 90%"></mat-divider>
 
-  <form class="cadastro-funcao-form">
-    <p>Cadastrar Função</p>
-    <mat-radio-group>
-      <mat-radio-button value="1" class="radio-funcao">Usuário Comum</mat-radio-button>
-      <mat-radio-button value="2" >Administrador</mat-radio-button>
-    </mat-radio-group>
+    <mat-divider class="form-divider" style="width: 90%"></mat-divider>
 
-    <div class="input-papel">
-      <mat-form-field >
-          <mat-label>Gênero</mat-label>
-          <select matNativeControl>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="Indefinido">Indefinido</option>
-          </select>
-      </mat-form-field>
+    <div class="cadastro-funcao">
 
-      <button mat-button class="btn-salvar">Salvar</button>
+      <p>Cadastrar Função</p>
+      <mat-radio-group>
+        <mat-radio-button value="1" class="radio-funcao">Usuário Comum</mat-radio-button>
+        <mat-radio-button value="2" >Administrador</mat-radio-button>
+      </mat-radio-group>
+
+      <div class="input-papel">
+        <mat-form-field >
+            <mat-label>Gênero</mat-label>
+            <select matNativeControl>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="Indefinido">Indefinido</option>
+            </select>
+        </mat-form-field>
+
+        <button mat-button class="btn-salvar" (click)="createUsuario()">Salvar</button>
+      </div>
     </div>
   </form>
 </mat-card>
-

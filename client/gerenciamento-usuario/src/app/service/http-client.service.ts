@@ -8,9 +8,15 @@ export class Usuario{
     public nome:String,
     public cpf:String,
     public dt_nascimento:Date,
-    public genero:String,
+    public genero:GeneroEnum,
     public funcao:Funcao
   ) {}
+}
+
+export enum GeneroEnum {
+  Masculino = 1,
+  Feminino = 2,
+  Indefinido = 3,
 }
 
 export class Funcao{
