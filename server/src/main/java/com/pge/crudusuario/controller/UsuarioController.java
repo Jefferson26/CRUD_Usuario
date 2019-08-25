@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pge.crudusuario.model.Funcao;
+import com.pge.crudusuario.model.Papel;
 import com.pge.crudusuario.model.Usuario;
 import com.pge.crudusuario.util.GeneroUsuario;
 
@@ -55,6 +56,11 @@ public class UsuarioController {
 		usuario.setGenero(GeneroUsuario.MASCULINO);
 		Funcao funcao = new Funcao();
 		funcao.setNome_funcao("Teste de funcao");
+		ArrayList<Papel> papeis = new ArrayList<Papel>();
+		Papel papel = new Papel();
+		papel.setNome_papel("Teste papel");
+		papeis.add(papel);
+		funcao.setPapeis(papeis);
 		usuario.setFuncao(funcao);
 		usuarios.add(usuario);
 		
@@ -66,6 +72,12 @@ public class UsuarioController {
 		usuario.setGenero(GeneroUsuario.INDEFINIDO);
 		funcao = new Funcao();
 		funcao.setNome_funcao("Usuario Comum");
+		papeis = new ArrayList<Papel>();
+		papel = new Papel();
+		papel.setNome_papel("Teste papel 2");
+		papeis.add(papel);
+		funcao.setPapeis(papeis);
+		usuario.setFuncao(funcao);
 		usuario.setFuncao(funcao);
 		usuarios.add(usuario);
 		

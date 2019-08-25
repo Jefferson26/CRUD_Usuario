@@ -23,7 +23,14 @@ export class Funcao{
   constructor(
     public id:number,
     public nome_funcao:String,
-    public papeis:[],
+    public papeis:Papel[],
+  ) {}
+}
+
+export class Papel{
+  constructor(
+    public id:number,
+    public nome_papel:String,
   ) {}
 }
 

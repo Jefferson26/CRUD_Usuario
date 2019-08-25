@@ -1,0 +1,12 @@
+<div>
+  <h3 style="text-align: left" class="titulo-dialog">Nome: {{data.usuario.nome}}</h3>
+  <h3 style="text-align: left" class="titulo-dialog">Cpf: {{data.usuario.cpf}}</h3>
+  <h3 style="text-align: left" class="titulo-dialog">Função: {{data.usuario.funcao.nome_funcao}}</h3>
+
+  <mat-divider class="form-divider" style="width: 90%"></mat-divider>
+
+  <h4 style="text-align: left" class="titulo-lista-usuarios">Papeis Relacionados </h4>
+
+  <p *ngFor="let papel of data.usuario.funcao.papeis"> {{papel.nome_papel}} </p>
+
+</div>

@@ -44,7 +44,7 @@
           <td mat-cell *matCellDef="let usuario">
             <button class="btn-acoes" mat-button [matMenuTriggerFor]="menu">...</button>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item (click)="openDialog()">Editar</button>
+              <button mat-menu-item (click)="openDialog(usuario)">Visualizar</button>
               <button mat-menu-item (click)="deleteUsuario(usuario)">Excluir</button>
             </mat-menu>
           </td>
