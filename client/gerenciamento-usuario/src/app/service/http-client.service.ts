@@ -9,6 +9,14 @@ export class Usuario{
     public cpf:String,
     public dt_nascimento:Date,
     public genero:String,
+    public funcao:Funcao
+  ) {}
+}
+
+export class Funcao{
+  constructor(
+    public id:BigInteger,
+    public nome:String,
   ) {}
 }
 

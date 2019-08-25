@@ -1,6 +1,7 @@
 package com.pge.crudusuario.controller;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pge.crudusuario.model.Funcao;
 import com.pge.crudusuario.model.Usuario;
+import com.pge.crudusuario.util.GeneroUsuario;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -44,11 +47,21 @@ public class UsuarioController {
 		Usuario usuario = new Usuario();
 		usuario.setNome("Jefferson");
 		usuario.setCpf("058.333.444-55");
+		usuario.setDt_nascimento(LocalDate.now());
+		usuario.setGenero(GeneroUsuario.MASCULINO);
+		Funcao funcao = new Funcao();
+		funcao.setNome_funcao("Teste de funcao");
+		usuario.setFuncao(funcao);
 		usuarios.add(usuario);
 		
 		usuario = new Usuario();
 		usuario.setNome("Barbosa");
 		usuario.setCpf("038.123.456-70");
+		usuario.setDt_nascimento(LocalDate.now());
+		usuario.setGenero(GeneroUsuario.INDEFINIDO);
+		funcao = new Funcao();
+		funcao.setNome_funcao("Usuario Comum");
+		usuario.setFuncao(funcao);
 		usuarios.add(usuario);
 		
 		return usuarios;
