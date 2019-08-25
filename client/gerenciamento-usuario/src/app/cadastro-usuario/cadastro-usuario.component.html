@@ -9,7 +9,7 @@
     </mat-form-field>
 
     <mat-form-field class="input-cadastro">
-      <input matInput [matDatepicker]="picker" mask='00/00/0000' placeholder="Data de Nascimento" >
+      <input matInput  [matDatepicker]="picker" placeholder="Data de Nascimento" [(ngModel)]="usuario.dt_nascimento" name="dt_nascimento">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
