@@ -22,7 +22,15 @@ export class HttpClientService {
   ) { 
      }
   
-  getUsuariosCadastrados(){
+  public getUsuariosCadastrados(){
     return this.httpClient.get<Usuario[]>('http://localhost:8080');
+  }
+
+  public deleteUsuario(usuario) {
+    return this.httpClient.delete<Usuario>("http://localhost:8080/"+ usuario.id);
+  }
+
+  public createUsuario(usuario) {
+    return this.httpClient.post<Usuario>("http://localhost:8080/", usuario);
   }
 }

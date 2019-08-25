@@ -1,0 +1,13 @@
+.componente-lista-usuarios{
+    margin: 5%;
+}
+
+.titulo-lista-usuarios{
+    color: #008080;
+    text-align: left;
+}
+
+.tabela-lista-usuarios{
+    width: 100%;
+    text-align: left;
+}

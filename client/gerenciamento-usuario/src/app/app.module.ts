@@ -8,12 +8,14 @@ import { MaterialModule } from './material.module';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
+import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    ListaUsuarioComponent
   ],
   imports: [
     BrowserModule,

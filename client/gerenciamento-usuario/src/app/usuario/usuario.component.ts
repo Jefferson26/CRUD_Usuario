@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService } from '../service/http-client.service';
 
 @Component({
   selector: 'app-usuario',
@@ -8,19 +7,8 @@ import { HttpClientService } from '../service/http-client.service';
 })
 export class UsuarioComponent implements OnInit {
 
-  usuarios:string[];
-  constructor(
-    private httpClientService:HttpClientService
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.httpClientService.getUsuariosCadastrados().subscribe(
-     response =>this.handleSuccessfulResponse(response),
-    );
-  }
-
-  handleSuccessfulResponse(response){
-    this.usuarios=response;
-  }
+  ngOnInit() { }
 
 }
