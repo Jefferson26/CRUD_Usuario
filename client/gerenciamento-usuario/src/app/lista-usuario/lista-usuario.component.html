@@ -34,9 +34,8 @@
       
       <ng-container matColumnDef="acoes">
           <th mat-header-cell *matHeaderCellDef> Ações </th>
-          <td mat-cell *matCellDef="let usuario"> {{usuario.genero}} </td>
+          <td mat-cell *matCellDef="let usuario"><button class="btn btn-danger" (click)="deleteUsuario(usuario)"> Deletar </button></td>
       </ng-container>
-
     </table>
   </mat-card>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService } from '../service/http-client.service';
+import { HttpClientService, Usuario } from '../service/http-client.service';
 
 @Component({
   selector: 'app-lista-usuario',
@@ -8,7 +8,7 @@ import { HttpClientService } from '../service/http-client.service';
 })
 export class ListaUsuarioComponent implements OnInit {
 
-  usuarios:string[];
+  usuarios:Usuario[];
   colunas_table: string[] = ['nome', 'cpf', 'nascimento', 'genero', 'funcao', 'acoes'];
   constructor(
     private httpClientService:HttpClientService
@@ -23,4 +23,11 @@ export class ListaUsuarioComponent implements OnInit {
   handleSuccessfulResponse(response){
     this.usuarios=response;
   }
+
+  deleteUsuario(usuario: Usuario): void {
+    this.httpClientService.deleteUsuario(usuario)
+      .subscribe( data => {
+        this.usuarios = this.usuarios.filter(u => u !== usuario);
+      })
+  };
 }
