@@ -22,7 +22,7 @@ export enum GeneroEnum {
 export class Funcao{
   constructor(
     public id:BigInteger,
-    public nome:String,
+    public nome_funcao:String,
   ) {}
 }
 

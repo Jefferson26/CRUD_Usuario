@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService, Usuario } from '../service/http-client.service';
+import { HttpClientService, Usuario, Funcao } from '../service/http-client.service';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -9,6 +9,11 @@ import { HttpClientService, Usuario } from '../service/http-client.service';
 export class CadastroUsuarioComponent implements OnInit {
 
   usuario: Usuario = new Usuario( null,"","",null,null,null);
+  
+  funcoes = [
+    {id: 1, nome_funcao: 'Usuário Comum'},
+    {id: 2, nome_funcao: 'Administrador'},
+  ];
 
   constructor(
     private httpClientService: HttpClientService

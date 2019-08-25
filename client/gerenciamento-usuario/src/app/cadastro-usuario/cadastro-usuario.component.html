@@ -28,9 +28,9 @@
     <div class="cadastro-funcao">
 
       <p>Cadastrar Função</p>
-      <mat-radio-group>
-        <mat-radio-button value="1" class="radio-funcao">Usuário Comum</mat-radio-button>
-        <mat-radio-button value="2" >Administrador</mat-radio-button>
+      <mat-radio-group [(ngModel)]="usuario.funcao" name="funcao">
+        <mat-radio-button [value]="funcoes[0]" class="radio-funcao">{{funcoes[0].nome_funcao}}</mat-radio-button>
+        <mat-radio-button [value]="funcoes[1]" >{{funcoes[1].nome_funcao}}</mat-radio-button>
       </mat-radio-group>
 
       <div class="input-papel">
