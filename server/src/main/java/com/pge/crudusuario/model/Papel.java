@@ -1,13 +1,13 @@
 package com.pge.crudusuario.model;
 
 public class Papel {
-	private Long id;
+	private Integer id;
 	private String nome_papel;
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNome_papel() {

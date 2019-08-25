@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class Usuario{
   constructor(
-    public id:BigInteger,
+    public id:number,
     public nome:String,
     public cpf:String,
     public dt_nascimento:Date,
@@ -21,8 +21,9 @@ export enum GeneroEnum {
 
 export class Funcao{
   constructor(
-    public id:BigInteger,
+    public id:number,
     public nome_funcao:String,
+    public papeis:[],
   ) {}
 }
 

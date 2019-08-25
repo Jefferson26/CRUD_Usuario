@@ -28,19 +28,17 @@
     <div class="cadastro-funcao">
 
       <p>Cadastrar Função</p>
-      <mat-radio-group [(ngModel)]="usuario.funcao" name="funcao">
-        <mat-radio-button [value]="funcoes[0]" class="radio-funcao">{{funcoes[0].nome_funcao}}</mat-radio-button>
-        <mat-radio-button [value]="funcoes[1]" >{{funcoes[1].nome_funcao}}</mat-radio-button>
+      <mat-radio-group [(ngModel)]="usuario.funcao" name="funcao" >
+        <mat-radio-button (click)="changePapeis(funcoes[0])" [value]="funcoes[0]" class="radio-funcao">{{funcoes[0].nome_funcao}}</mat-radio-button>
+        <mat-radio-button (click)="changePapeis(funcoes[1])" [value]="funcoes[1]" >{{funcoes[1].nome_funcao}}</mat-radio-button>
       </mat-radio-group>
 
       <div class="input-papel">
-        <mat-form-field >
-            <mat-label>Gênero</mat-label>
-            <select matNativeControl>
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-              <option value="Indefinido">Indefinido</option>
-            </select>
+        <mat-form-field>
+          <mat-label>Papeis</mat-label>
+          <mat-select [(ngModel)]="usuario.funcao.papeis" name="papeis" multiple>
+            <mat-option *ngFor="let papel of papeis_atual" [value]="papel">{{papel.nome_papel}}</mat-option>
+          </mat-select>
         </mat-form-field>
 
         <button mat-button class="btn-salvar" (click)="createUsuario()">Salvar</button>

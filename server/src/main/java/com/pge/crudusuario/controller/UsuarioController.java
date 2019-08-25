@@ -45,7 +45,7 @@ public class UsuarioController {
 	private static List<Usuario> adicionaUsuariosFake() {
 		List<Usuario> usuarios = new ArrayList<>();
 		Usuario usuario = new Usuario();
-		usuario.setId(1L);
+		usuario.setId(1);
 		usuario.setNome("Jefferson");
 		usuario.setCpf("058.333.444-55");
 		usuario.setDt_nascimento(LocalDate.now());
@@ -56,7 +56,7 @@ public class UsuarioController {
 		usuarios.add(usuario);
 		
 		usuario = new Usuario();
-		usuario.setId(2L);
+		usuario.setId(2);
 		usuario.setNome("Barbosa");
 		usuario.setCpf("038.123.456-70");
 		usuario.setDt_nascimento(LocalDate.now());

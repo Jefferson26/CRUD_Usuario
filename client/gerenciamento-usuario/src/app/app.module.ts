@@ -9,7 +9,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule } from 'ngx-mask';
 import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     BrowserAnimationsModule,
     NgxMaskModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
