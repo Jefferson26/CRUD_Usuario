@@ -1,7 +1,14 @@
 <div class="componente-lista-usuarios">
-  <h2 class="titulo-lista-usuarios">Usuários Cadastrados</h2>
-  <mat-card>
+  <div class="header-lista-usuario">
+    <h2 style="text-align: left" class="titulo-lista-usuarios">Usuários Cadastrados</h2>
 
+    <mat-form-field class="search-lista-usuario">
+      <mat-icon matSuffix>search</mat-icon>
+        <input matInput type="search" placeholder="search here" class="search-input">
+      </mat-form-field>
+  </div>
+
+  <mat-card>
     <table mat-table [dataSource]="usuarios" class="tabela-lista-usuarios">
 
       <tr mat-header-row *matHeaderRowDef="colunas_table"></tr>
@@ -34,7 +41,13 @@
       
       <ng-container matColumnDef="acoes">
           <th mat-header-cell *matHeaderCellDef> Ações </th>
-          <td mat-cell *matCellDef="let usuario"><button class="btn btn-danger" (click)="deleteUsuario(usuario)"> Deletar </button></td>
+          <td mat-cell *matCellDef="let usuario">
+            <button class="btn-acoes" mat-button [matMenuTriggerFor]="menu">...</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="openDialog()">Editar</button>
+              <button mat-menu-item (click)="deleteUsuario(usuario)">Excluir</button>
+            </mat-menu>
+          </td>
       </ng-container>
     </table>
   </mat-card>

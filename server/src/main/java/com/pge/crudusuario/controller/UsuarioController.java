@@ -29,15 +29,18 @@ public class UsuarioController {
 	}
 	
 	@DeleteMapping(path = { "/{id}" })
-	public Usuario delete(@PathVariable("id") Long id) {	
+	public Usuario delete(@PathVariable("id") Integer id) {	
+		
 		Usuario usuario_removido = usuarios.stream().filter(
 														c -> c.getId().equals(id)
-													).findFirst().get();		
+													).findFirst().get();	
+		usuarios.remove(usuario_removido);
 		return usuario_removido;
 	}
 
 	@PostMapping
 	public Usuario create(@RequestBody Usuario usuario) {
+		usuario.setId(usuarios.size());
 		usuarios.add(usuario);
 		return usuario;
 	}

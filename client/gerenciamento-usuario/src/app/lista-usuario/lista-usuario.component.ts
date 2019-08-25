@@ -16,8 +16,9 @@ export class ListaUsuarioComponent implements OnInit {
 
   ngOnInit() {
     this.httpClientService.getUsuariosCadastrados().subscribe(
-      response =>this.handleSuccessfulResponse(response),
-     );
+      response => {
+        this.handleSuccessfulResponse(response);
+      });
   }
 
   handleSuccessfulResponse(response){

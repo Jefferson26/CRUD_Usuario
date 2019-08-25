@@ -2,12 +2,30 @@
     margin: 5%;
 }
 
+.header-lista-usuario{
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+}
+
 .titulo-lista-usuarios{
     color: #008080;
-    text-align: left;
+    display: inline-block;
+}
+
+.search-lista-usuario{
+    float: right;
 }
 
 .tabela-lista-usuarios{
     width: 100%;
     text-align: left;
+}
+
+.btn-acoes{
+    background-color: #008080;
+    color: azure;
+    font-size: 36px;
+    line-height: 10px;
+    padding-bottom: 20px;
 }
