@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { HttpClientService, Usuario } from '../service/http-client.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatTableDataSource} from '@angular/material';
 
 export interface DialogData {
   nome: string;
@@ -16,6 +17,7 @@ export interface DialogData {
 })
 
 export class ListaUsuarioComponent implements OnInit {
+  dataSource: any;
 
   @Input() usuarios:Usuario[];
   colunas_table: string[] = ['nome', 'cpf', 'nascimento', 'genero', 'funcao', 'acoes'];
@@ -33,6 +35,7 @@ export class ListaUsuarioComponent implements OnInit {
 
   handleSuccessfulResponse(response){
     this.usuarios=response;
+    this.dataSource = new MatTableDataSource(this.usuarios);
   }
 
   deleteUsuario(usuario: Usuario): void {
@@ -47,6 +50,12 @@ export class ListaUsuarioComponent implements OnInit {
       width: '850px',
       data: {usuario: usuario}
     });
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }
 
